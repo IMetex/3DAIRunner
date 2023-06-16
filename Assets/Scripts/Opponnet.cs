@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class Opponnet : MonoBehaviour
 {
     public NavMeshAgent OppennetAgent;
+    public SpeedBooster speedBooster;
     public GameObject target;
     private Vector3 oppenetStartPos;
 
@@ -24,6 +25,13 @@ public class Opponnet : MonoBehaviour
         if (other.gameObject.CompareTag("Collision"))
         {
             transform.position = oppenetStartPos;
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlusSpeed"))
+        {
+            speedBooster.SpBooster();
         }
     }
 }

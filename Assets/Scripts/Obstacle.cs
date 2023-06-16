@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+   
     public LevelManager levelManager;
     public PlayerController playerController;
+    public SpeedBooster speedBooster;
     private Vector3 playerStartPos;
+
     private void Start()
     {
         playerStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -20,6 +23,10 @@ public class Obstacle : MonoBehaviour
             transform.Rotate(transform.position.x, -180, transform.position.z, Space.Self);
             levelManager.RestartPanel.SetActive(true);
         }
+        if (other.CompareTag("PlusSpeed"))
+        {
+           speedBooster.SpBooster();
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -28,4 +35,6 @@ public class Obstacle : MonoBehaviour
             transform.position = playerStartPos;
         }
     }
+
+
 }
