@@ -6,18 +6,26 @@ public class Obstacle : MonoBehaviour
 {
     public LevelManager levelManager;
     public PlayerController playerController;
+    private Vector3 playerStartPos;
+    private void Start()
+    {
+        playerStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+    }
     public void OnTriggerEnter(Collider other)
     {
-       if (other.CompareTag("EndLine"))
+        if (other.CompareTag("EndLine"))
         {
-            playerController.forwardSpeed = 0;
+            playerController.forwardSpeed = 0f;
+            transform.Rotate(transform.position.x, -180, transform.position.z, Space.Self);
+            levelManager.RestartPanel.SetActive(true);
         }
     }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Collision"))
         {
-            levelManager.Again();
+            transform.position = playerStartPos;
         }
     }
 }
