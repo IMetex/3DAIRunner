@@ -19,7 +19,7 @@ public class CoinCollet : MonoBehaviour
     void AddScore()
     {
         score++;
-        scoreText.text = "Score:" + score.ToString();
+        scoreText.text = score.ToString();
     }
 
 }
