@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Coin
   - Collision
   - EndLine
   - PlusSpeed
+  - Star
+  - Bomb
   layers:
   - Default
   - TransparentFX

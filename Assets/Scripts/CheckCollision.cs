@@ -21,6 +21,7 @@ public class CheckCollision : MonoBehaviour
         {
             // Speed Booster
             speedBooster.SpBooster();
+            other.gameObject.SetActive(false);
 
         }
     }

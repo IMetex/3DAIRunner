@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Opponent : MonoBehaviour
 {
+    private Animator animator;
     public NavMeshAgent OpponentAgent;
     public SpeedBooster speedBooster;
     public GameObject target;
@@ -13,16 +14,22 @@ public class Opponent : MonoBehaviour
     void Start()
     {
         OpponentAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
-        OpponentAgent.SetDestination(target.transform.position);
+        if (LevelManager.LevelManagerInstance.gameState == true)
+        {
+            OpponentAgent.SetDestination(target.transform.position);
+            animator.SetBool("IsMove", true);
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlusSpeed"))
         {
-           // speedBooster.SpBooster();
+            speedBooster.SpBooster();
+            other.gameObject.SetActive(false);
         }
     }
 }

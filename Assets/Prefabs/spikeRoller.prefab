@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3365669849314394361}
   - component: {fileID: 7607506533692465768}
   - component: {fileID: 8941742074297037717}
+  - component: {fileID: 1631809310}
   m_Layer: 0
   m_Name: spikeRoller
   m_TagString: Collision
@@ -111,3 +112,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4696283, y: 2.002222, z: 1.4173381}
   m_Center: {x: 0.061095595, y: 0.9983589, z: -0.052277885}
+--- !u!114 &1631809310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870209003582595372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708effadbcc322d4ca65d0a7dd9dcc25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  strength: 2
