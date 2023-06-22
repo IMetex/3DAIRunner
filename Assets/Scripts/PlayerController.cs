@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float xSpeed;
     public float forwardSpeed;
     private float touchX = 0;
-    private float limitX = 20;
+    private float limitX = 25;
     private float newXValue;
 
     [Header("Boolen")]

@@ -9,7 +9,7 @@ public class ObstacleaAnimator : MonoBehaviour
     private float randomOffset;
     void Start()
     {
-        randomOffset = Random.Range(4f,-4f);
+        randomOffset = Random.Range(20f,-20f);
     }
     void Update()
     {

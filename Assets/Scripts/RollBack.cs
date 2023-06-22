@@ -9,14 +9,14 @@ public class RollBack : MonoBehaviour
 
     void Start()
     {
-     
+
         playerStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         opponentStartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Collision"))
+        if (other.gameObject.CompareTag("Collision") || other.gameObject.CompareTag("WaterFall"))
         {
             transform.position = playerStartPos;
             transform.position = opponentStartPos;
