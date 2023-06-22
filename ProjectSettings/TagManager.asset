@@ -9,6 +9,7 @@ TagManager:
   - PlusSpeed
   - Star
   - Bomb
+  - Ball
   layers:
   - Default
   - TransparentFX

@@ -5,24 +5,27 @@ using TMPro;
 
 public class Collect : MonoBehaviour
 {
-    public int score = 0;
-    public bool addBomb;
-    public GameObject bombIcon;
+    private int score = 0;
+
+    public bool addBall;
+    public GameObject ballIcon;
     public TextMeshProUGUI scoreText;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Star"))
         {
+            // Add Star 
             other.gameObject.SetActive(false);
             AddScore();
         }
-        if (other.CompareTag("Bomb"))
+        if (other.CompareTag("Ball"))
         {
-            addBomb = true;
+            // Add Ball 
+            addBall = true;
+            // Visibility 
             other.gameObject.SetActive(false);
-            bombIcon.SetActive(true);
-            Debug.Log("Add");
+            ballIcon.SetActive(true);
         }
     }
     void AddScore()
