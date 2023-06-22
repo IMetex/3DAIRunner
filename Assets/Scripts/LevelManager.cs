@@ -6,7 +6,13 @@ public class LevelManager : MonoBehaviour
 {
     //public GameObject RestartPanel;
     public static LevelManager LevelManagerInstance;
+
+    [Header("UI Elements Visibiliy")]
     public GameObject playText;
+    public GameObject gameText;
+    public GameObject levelProgressBar;
+    public GameObject inRangingSystem;
+    public GameObject star;
     public bool gameState;
 
 
@@ -19,6 +25,10 @@ public class LevelManager : MonoBehaviour
     {
         gameState = true;
         playText.SetActive(false);
+        gameText.SetActive(false);
+        levelProgressBar.SetActive(true);
+        star.SetActive(true);
+        inRangingSystem.SetActive(true);
     }
     public void Again()
     {
