@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-   [SerializeField] private Vector3 rotation;
+    [SerializeField] private Vector3 rotation;
 
     void FixedUpdate()
     {
-        // object rotation
-         transform.Rotate(rotation,Space.World);
+        if (LevelManager.LevelManagerInstance.gameState == true)
+        {
+            // object rotation
+            transform.Rotate(rotation, Space.World);
+        }
     }
 }

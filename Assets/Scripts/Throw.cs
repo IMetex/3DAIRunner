@@ -6,6 +6,7 @@ public class Throw : MonoBehaviour
 {
     public Collect collect;
     public GameObject ballPrefab;
+    private GameObject currentBall;
     public Transform ballExit;
     public Ball ball;
     private Animator animator;
@@ -29,7 +30,10 @@ public class Throw : MonoBehaviour
             animator.SetBool("IsThrow", true);
             isThrow = true;
             // Create ball
-            Instantiate(ballPrefab, ballExit.position, Quaternion.identity);
+            currentBall = Instantiate(ballPrefab, ballExit.position, Quaternion.identity);
+
+            // Destroy
+            Destroy(currentBall,1f);
 
         }
         else

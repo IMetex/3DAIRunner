@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     public GameObject playText;
     public GameObject gameText;
     public GameObject levelProgressBar;
-    public GameObject inRangingSystem;
+    public GameObject[] inRangingSystem;
     public GameObject star;
     public bool gameState;
 
@@ -28,7 +28,10 @@ public class LevelManager : MonoBehaviour
         gameText.SetActive(false);
         levelProgressBar.SetActive(true);
         star.SetActive(true);
-        inRangingSystem.SetActive(true);
+        for (int i = 0; i < inRangingSystem.Length; i++)
+        {
+            inRangingSystem[i].SetActive(true);
+        }
     }
     public void Again()
     {

@@ -11,6 +11,7 @@ TagManager:
   - Bomb
   - Ball
   - WaterFall
+  - Runner
   layers:
   - Default
   - TransparentFX
