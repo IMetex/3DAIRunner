@@ -18,6 +18,10 @@ public class Opponent : MonoBehaviour
     }
     void Update()
     {
+        if (GameManager.instance.isGameOver == true)
+        {
+            OpponentAgent.speed = 0f;
+        }
         if (LevelManager.LevelManagerInstance.gameState == true)
         {
             OpponentAgent.SetDestination(target.transform.position);

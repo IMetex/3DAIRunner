@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public GameObject[] inRangingSystem;
     public GameObject star;
     public bool gameState;
+ 
 
 
     void Start()
@@ -28,13 +29,23 @@ public class LevelManager : MonoBehaviour
         gameText.SetActive(false);
         levelProgressBar.SetActive(true);
         star.SetActive(true);
-        for (int i = 0; i < inRangingSystem.Length; i++)
-        {
-            inRangingSystem[i].SetActive(true);
-        }
+        RankingUI();
     }
     public void Again()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void RankingUI()
+    {
+        for (int i = 0; i < inRangingSystem.Length; i++)
+        {
+            inRangingSystem[i].SetActive(true);
+        }
+    } public void RankingUIDeactive()
+    {
+        for (int i = 0; i < inRangingSystem.Length; i++)
+        {
+            inRangingSystem[i].SetActive(false);
+        }
     }
 }

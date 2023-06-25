@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class CheckCollision : MonoBehaviour
 {
-    public LevelManager levelManager;
-    public PlayerController playerController;
+    [Header("Access")]
     public SpeedBooster speedBooster;
-
+    public PlayerFinish playerFinish;
+    public AIFinish aiFinish;
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EndLine"))
+        if (other.CompareTag("Finish"))
         {
-            playerController.forwardSpeed = 0f;
-            transform.Rotate(transform.position.x, -180, transform.position.z, Space.Self);
-            //levelManager.RestartPanel.SetActive(true);
+           playerFinish.PlayerWin();
+           aiFinish.AISpeedZero();
         }
+
         if (other.CompareTag("PlusSpeed"))
         {
             // Speed Booster
             speedBooster.SpBooster();
             other.gameObject.SetActive(false);
-
         }
     }
+
 
 }
