@@ -10,7 +10,7 @@
 #### Assets Used
 - Character
   > [Low Character Pack: Free Sample](https://assetstore.unity.com/packages/3d/characters/low-character-pack-free-sample-192954)
-- Enviroment
+- Environment
   > [KayKit - Medieval Builder Pack](https://kaylousberg.itch.io/kaykit-medieval-builder-pack)
   > 
   > [Mini-Game Variety Pack](https://kaylousberg.itch.io/kay-kit-mini-game-variety-pack)
